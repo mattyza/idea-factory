@@ -47,7 +47,7 @@ class ideaFactoryProcessEntry {
 					  	'post_title'    => wp_strip_all_tags( $title ),
 					  	'post_content'  => idea_factory_media_filter( $desc ),
 					  	'post_status'   => $must_approve,
-					  	'post_type'	  	=> 'ideas',
+					  	'post_type'	  	=> 'idea',
 					  	'post_author'   => (int) $userid
 					);
 					$entry_id = wp_insert_post( $post_args );
