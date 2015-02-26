@@ -129,7 +129,7 @@ function idea_factory_archive_query( $query ) {
 	if ( is_admin() || ! $query->is_main_query() )
         return;
 
- 	if ( is_post_type_archive( 'ideas' ) ) {
+ 	if ( is_post_type_archive( 'idea' ) ) {
         $query->set( 'meta_key', '_idea_votes' );
         $query->set( 'orderby', 'meta_value_num' );
         $query->set( 'order', 'DESC' );

@@ -25,13 +25,13 @@ class ideaFactoryTemplateLoader {
 
 	   	if ( idea_factory_is_archive() && 'on' !== $disable_archive ):
 
-	    	if ( $overridden_template = locate_template( 'template-ideas.php', true ) ) {
+	    	if ( $overridden_template = locate_template( 'template-idea.php', true ) ) {
 
 			   $template = load_template( $overridden_template );
 
 			} else {
 
-			   	$template = IDEA_FACTORY_DIR.'templates/template-ideas.php';
+			   	$template = IDEA_FACTORY_DIR.'templates/template-idea.php';
 			}
 
 	    endif;

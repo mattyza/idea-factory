@@ -48,7 +48,7 @@ class ideaFactoryShortcodes {
 				$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
 				$args = array(
-					'post_type'			=> 'ideas',
+					'post_type'			=> 'idea',
 					'meta_key'			=> '_idea_votes',
 					'orderby'			=> 'meta_value_num',
 					'paged'				=> $paged
