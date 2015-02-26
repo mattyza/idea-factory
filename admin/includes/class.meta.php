@@ -28,7 +28,7 @@ class ideaFactoryMeta {
 		$threshold = idea_factory_get_option('if_threshold','if_settings_main');
 
 		if ( $threshold ) {
-			add_meta_box('idea_factory_status',__( 'Idea Status', 'idea-factory' ),array($this,'render_status_box'), 'ideas','side','core');
+			add_meta_box('idea_factory_status',__( 'Idea Status', 'idea-factory' ),array($this,'render_status_box'), 'idea','side','core');
 		}
 
 	}
@@ -71,7 +71,7 @@ class ideaFactoryMeta {
 
 		$nonce = $_POST['idea_factory_nonce'];
 
-		if ( !wp_verify_nonce( $nonce, 'idea_factory_meta' ) || defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE || 'ideas' != $post->post_type )
+		if ( !wp_verify_nonce( $nonce, 'idea_factory_meta' ) || defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE || 'idea' != $post->post_type )
 			return $post_id;
 
 		$status 	 = isset( $_POST['idea_status'] ) ? $_POST['idea_status'] : false;
