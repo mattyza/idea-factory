@@ -40,9 +40,9 @@ class if_settings_api_wrap {
     }
 
 	function submenu_page() {
-		add_submenu_page( 'edit.php?post_type=ideas', 'Settings', __('Settings','idea-factory'), 'manage_options', 'idea-factory-settings', array($this,'submenu_page_callback') );
-		add_submenu_page( 'edit.php?post_type=ideas', 'Help', __('Help','idea-factory'), 'manage_options', 'idea-factory-docs', array($this,'docs_callback') );		
-		add_submenu_page( 'edit.php?post_type=ideas', 'Reset', __('Reset','idea-factory'), 'manage_options', 'idea-factory-reset', array($this,'reset_callback') );
+		add_submenu_page( 'edit.php?post_type=idea', 'Settings', __('Settings','idea-factory'), 'manage_options', 'idea-factory-settings', array($this,'submenu_page_callback') );
+		add_submenu_page( 'edit.php?post_type=idea', 'Help', __('Help','idea-factory'), 'manage_options', 'idea-factory-docs', array($this,'docs_callback') );
+		add_submenu_page( 'edit.php?post_type=idea', 'Reset', __('Reset','idea-factory'), 'manage_options', 'idea-factory-reset', array($this,'reset_callback') );
 	}
 
 	/**
@@ -81,12 +81,12 @@ class if_settings_api_wrap {
 			?><h2 style="margin-bottom:0;"><?php _e('Idea Factory Documentation','idea-factory');?></h2>
 			<hr>
 
-			<h3 style="margin-bottom:0;"><?php _e('The Basics','idea-factory');?></h3> 
+			<h3 style="margin-bottom:0;"><?php _e('The Basics','idea-factory');?></h3>
 			<p style="margin-top:5px;"><?php _e('After you activate <em>Idea Factory</em>, it will automatically be available at <a href="'.get_post_type_archive_link( $domain ).'" target="_blank">'.get_post_type_archive_link( $domain ).'</a>. You can rename this in the settings or deactivate it all together and use the shortcode instead.','idea-factory');?></p>
 
 			<hr style="margin-top:20px;">
 
-			<h3 style="margin-bottom:0;"><?php _e('The Shortcode','idea-factory');?></h3> 
+			<h3 style="margin-bottom:0;"><?php _e('The Shortcode','idea-factory');?></h3>
 			<p style="margin-top:5px;"><?php _e('You can additionally display the form and ideas via a shortcode as documented below.','idea-factory');?></p>
 
 			<code>[idea_factory hide_submit="off" hide_votes="off" hide_voting="off"]</code>
@@ -99,12 +99,12 @@ class if_settings_api_wrap {
 
 			<hr style="margin-top:20px;">
 
-			<h3 style="margin-bottom:0;"><?php _e('How Voting Works','idea-factory');?></h3> 
+			<h3 style="margin-bottom:0;"><?php _e('How Voting Works','idea-factory');?></h3>
 			<p style="margin-top:5px;"><?php _e('Voting is currently restricted to logged in users. Total votes are stored in the post meta table. Once a user votes, a flag is recorded in the user_meta table, preventing this user from being able to vote again on the same idea.','idea-factory');?></p>
 
 			<hr style="margin-top:20px;">
 
-			<h3 style="margin-bottom:0;"><?php _e('Developers','idea-factory');?></h3> 
+			<h3 style="margin-bottom:0;"><?php _e('Developers','idea-factory');?></h3>
 			<p style="margin-top:5px;"><?php _e('Full documentation of hooks, actions, filters, and helper functions are available on the GitHub wiki page located <a href="https://github.com/bearded-avenger/idea-factory/wiki">here</a>','idea-factory');?>.</p>
 
 			<?php
@@ -145,7 +145,7 @@ class if_settings_api_wrap {
 				    });
 				});
 			</script>
-		<?php 
+		<?php
 	}
 
 	/**
@@ -157,7 +157,7 @@ class if_settings_api_wrap {
 
 		check_ajax_referer( 'idea-factory-reset', 'security' );
 
-		$posts = get_posts( array('post_type' => 'ideas', 'posts_per_page' => -1 ) );
+		$posts = get_posts( array('post_type' => 'idea', 'posts_per_page' => -1 ) );
 
 		if ( $posts ):
 
