@@ -9,8 +9,8 @@
 class ideaFactoryColumnMods {
 
 	function __construct(){
-    	add_filter('manage_ideas_posts_columns', 		array($this,'col_head'));
-		add_action('manage_ideas_posts_custom_column', 	array($this,'col_content'), 10, 2);
+    	add_filter('manage_idea_posts_columns', 		array($this,'col_head'));
+		add_action('manage_idea_posts_custom_column', 	array($this,'col_content'), 10, 2);
 	}
 
 	/**
